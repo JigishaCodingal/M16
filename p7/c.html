@@ -1,0 +1,31 @@
+<html>
+
+<body>
+    <p id="i1"></p>
+    <script>
+        function disp(n) {
+            document.getElementById('i1').innerHTML = n;
+        }
+        let pr=new Promise(function(res,rej){//producing
+            let x=10;
+            if(x==10){//successful
+                res("OK");
+            }
+            else{//unsuccessful
+                rej("Error");
+            }
+        });
+        pr.then(//consuming
+            function(v){disp(v);},//successful : res
+            function (e) { disp(e); }//unsuccessful : rej
+        );
+
+        async function sum(a,b,c) {//consuming
+            let answer=await a*b*c;//producing
+            disp(answer);
+        }
+        sum(3,4,6);
+    </script>
+</body>
+
+</html>

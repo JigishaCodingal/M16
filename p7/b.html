@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <p id="i1"></p>
+        <script>
+            function disp(n){//n=13
+                document.getElementById('i1').innerHTML=n;
+            }
+            function calc(x,y,fun){//x=6,y=7,fun=disp
+                let sum=x+y;//sum=13
+                fun(sum);//disp(13)
+            }
+            calc(6,7,disp);
+        </script>
+    </body>
+</html>
